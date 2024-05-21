@@ -35,29 +35,32 @@ export default function ListIntervenants() {
                         <td>Senior</td>
                         <td>
                             <td>
-                                <div class="dropdown">
+                                <div className="dropdown">
                                     <div
-                                        class="nav-link collapsed"
+                                        className="nav-link collapsed"
                                         data-mdb-dropdown-init
                                     >
                                         <i
-                                            class="fa-solid fa-caret-down"
+                                            className="fa-solid fa-caret-down"
                                             style={{
                                                 cursor: "pointer !important;",
                                             }}
                                         ></i>
                                     </div>
                                     <ul
-                                        class="dropdown-menu "
+                                        className="dropdown-menu "
                                         aria-labelledby="dropdownMenuButton"
                                     >
                                         <li>
-                                            <a class="dropdown-item" href="#">
+                                            <a
+                                                className="dropdown-item"
+                                                href="#"
+                                            >
                                                 Modifier
                                             </a>
                                         </li>
                                         <li>
-                                            <button class="dropdown-item delete-btn">
+                                            <button className="dropdown-item delete-btn">
                                                 Supprimer
                                             </button>
                                         </li>

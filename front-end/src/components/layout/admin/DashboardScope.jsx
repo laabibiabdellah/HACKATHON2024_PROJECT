@@ -63,9 +63,44 @@ export default function DashboardScope(props) {
                                 <li>
                                     <Link
                                         className="dropdown-item"
-                                        to={"ajouter-intervenants"}
+                                        to={"ajouter-intervenant"}
                                     >
-                                        Ajouter Intervenants
+                                        Ajouter Intervenant
+                                    </Link>
+                                </li>
+                            </ul>
+                            <div
+                                className="nav-link collapsed"
+                                data-toggle="collapse"
+                                data-target="#collapseTwo"
+                                aria-controls="collapseTwo"
+                                id="dropdownMenuButton"
+                                data-mdb-dropdown-init
+                                data-mdb-ripple-init
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                <i className="fa-solid fa-users"></i>
+                                <span>Formations</span>
+                            </div>
+                            <ul
+                                className="dropdown-menu ml-4"
+                                aria-labelledby="dropdownMenuButton"
+                            >
+                                <li>
+                                    <Link
+                                        className="dropdown-item"
+                                        to={"list-formations"}
+                                    >
+                                        List formations
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        className="dropdown-item"
+                                        to={"ajouter-formation"}
+                                    >
+                                        Ajouter formation
                                     </Link>
                                 </li>
                             </ul>

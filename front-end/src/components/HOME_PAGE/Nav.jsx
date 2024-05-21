@@ -38,41 +38,7 @@ export default function Nav() {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Team
-                                </a>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a
-                                    className="nav-link dropdown-toggle"
-                                    href="#"
-                                    role="button"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                                >
-                                    Intervenants
-                                </a>
-                                <ul className="dropdown-menu">
-                                    <li>
-                                        <Link
-                                            className="dropdown-item"
-                                            to={"list-intervenants"}
-                                        >
-                                            List intervenants
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            className="dropdown-item"
-                                            to={"ajoute-intervenants"}
-                                        >
-                                            Ajoute intervenants
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">
-                                    Projects
+                                    All courses
                                 </a>
                             </li>
                         </ul>
@@ -86,18 +52,24 @@ export default function Nav() {
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
                             >
-                                Dropdown
+                                Options
                             </button>
                             <ul className="dropdown-menu">
                                 <li>
-                                    <a className="dropdown-item" href="#">
-                                        Profile
-                                    </a>
+                                    <Link
+                                        className="dropdown-item"
+                                        to={"profil"}
+                                    >
+                                        Profil
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a className="dropdown-item" href="#">
+                                    <Link
+                                        className="dropdown-item"
+                                        to={"settings"}
+                                    >
                                         Settings
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
                                     <Link

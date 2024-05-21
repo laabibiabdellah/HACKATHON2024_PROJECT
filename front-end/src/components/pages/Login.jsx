@@ -1,8 +1,13 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
+
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
     let baseURL = import.meta.env.VITE_BACKEND_URL;
+
+    let navigate = useNavigate();
 
     const formik = useFormik({
         initialValues: {
@@ -21,12 +26,12 @@ export default function Login() {
         }),
         onSubmit: (values) => {
             axios
-                .post(`${baseURL}/all-users`, values)
+                .post(`${baseURL}/login`, values)
                 .then((response) => {
-                    console.log("done");
+                    navigate("dashboard");
                 })
-                .catch((error) => {
-                    console.log("error");
+                .catch((response) => {
+                    console.log("err");
                 });
         },
     });

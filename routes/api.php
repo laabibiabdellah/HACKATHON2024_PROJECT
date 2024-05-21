@@ -2,18 +2,20 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\RoleController;
-use \App\Http\Controllers\CompetenceController;
-use \App\Http\Controllers\IntervenantController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\CompetenceController;
+use App\Http\Controllers\IntervenantController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login']);
-Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'logout']);
-Route::post('/register/intervenant', [\App\Http\Controllers\AuthController::class, 'intervenantRegister']);
-Route::post('/register/entreprise', [\App\Http\Controllers\AuthController::class, 'entrepriseRegister']);
+// Authentication Routes
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout']);
+Route::post('/register/intervenant', [AuthController::class, 'intervenantRegister']);
+Route::post('/register/entreprise', [AuthController::class, 'entrepriseRegister']);
 
 // Role CRUD
 Route::group(['prefix' => 'roles'], function () {

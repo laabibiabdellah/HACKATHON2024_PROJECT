@@ -4,3 +4,8 @@ input {
 input:focus ~ label {
     background-color: #fff !important;
 }
+
+button {
+    background-color: #009ee0 !important;
+    color: #fff !important;
+}
