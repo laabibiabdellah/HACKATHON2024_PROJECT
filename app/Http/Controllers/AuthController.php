@@ -46,7 +46,6 @@ class AuthController extends Controller
         ], 201);
     }
 
-
     public function entrepriseRegister(Request $request)
     {
         $validatedData = $request->validate([
