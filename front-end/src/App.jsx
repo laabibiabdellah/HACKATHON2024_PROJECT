@@ -1,35 +1,100 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "bootstrap/dist/css/bootstrap.css";
+import "./utilites/mdb.min.css";
+import "bootstrap/dist/js/bootstrap.bundle";
 
-function App() {
-  const [count, setCount] = useState(0)
+import "./utilites/bootstrap.bundle.min.js";
+// import "./utilites/mdb.umd.min.js";
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Nav from "./components/HOME_PAGE/Nav";
+import HeroSection from "./components/HOME_PAGE/HeroSection";
+import SecondarySection from "./components/HOME_PAGE/SecondarySection";
+
+import AjouterIntervenants from "./components/pages/intervenants/AjouterIntervenants.jsx";
+import ListIntervenants from "./components/pages/intervenants/ListIntervenants.jsx";
+
+// AUTH
+import Login from "./components/pages/Login";
+import SignUp from "./components/pages/SignUp";
+
+// DASHBOARD
+import DashboardScope from "./components/layout/admin/DashboardScope.jsx";
+import ListIntervenants_ADMIN from "./components/layout/admin/ListIntervenants";
+
+export default function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <>
+                            <Nav />
+                            <HeroSection />
+                            {/* <SecondarySection /> */}
+
+                            {/* <h1>hhhhhhhhhh</h1> */}
+                        </>
+                    }
+                />
+                <Route
+                    path="/profil"
+                    element={
+                        <>
+                            <Nav />
+                            <h1>profil</h1>
+                        </>
+                    }
+                />
+                <Route
+                    path="list-intervenants"
+                    element={
+                        <>
+                            <Nav />
+                            <ListIntervenants />
+                        </>
+                    }
+                />
+                <Route
+                    path="ajoute-intervenants"
+                    element={
+                        <>
+                            <Nav />
+                            <AjouterIntervenants />
+                        </>
+                    }
+                />
+
+                <Route path="contact-us" element={<h1>contact-us</h1>} />
+                <Route path="login" element={<Login />} />
+                <Route path="sign-up" element={<SignUp />} />
+
+                {/* ------------------- BIGIN DASHBOARD ------------------- */}
+                <Route
+                    path="/dashboard"
+                    element={<DashboardScope title="Dashboard" />}
+                >
+                    {/* ------------------- BIGIN USERS ------------------- */}
+                    <Route
+                        path="list-intervenants"
+                        element={
+                            <>
+                                <ListIntervenants />
+                            </>
+                        }
+                    />
+                    <Route
+                        path="ajoute-intervenants"
+                        element={
+                            <>
+                                <AjouterIntervenants />
+                            </>
+                        }
+                    />
+                    {/* ------------------- END USERS ------------------- */}
+                </Route>
+                {/* ------------------- END DASHBOARD ------------------- */}
+            </Routes>
+        </BrowserRouter>
+    );
 }
-
-export default App
