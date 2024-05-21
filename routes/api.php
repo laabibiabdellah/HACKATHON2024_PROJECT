@@ -24,7 +24,6 @@ Route::group(['prefix' => 'roles'], function () {
     Route::delete('/{role}', [RoleController::class, 'destroy']);
 });
 
-
 // Intervenant CRUD
 Route::group(['prefix' => 'intervenants'], function () {
     Route::get('/', [IntervenantController::class, 'index']);
